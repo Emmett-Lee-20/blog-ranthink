@@ -1,0 +1,87 @@
+---
+title: "About This Site?"
+seoTitle: "Rant and Think. Hence, Ranthink."
+description: "What do you need to know about Ranthink? It's complicated, sophisticated, exciting, and revolutionary. Intrigued? Come and see for yourself."
+pubDate: "2025-08-17T13:23:01+08:00"
+updatedDate: "2025-08-24T23:03:00+08:00"
+image: "../../assets/images/About-Ranthink.jpg"
+imageAlt: "About Ranthink"
+imagePosition: "50% 70%"
+---
+
+Didn’t know you would have come across this edgy corner of the internet (it might be literally at the edge of the internet where at any moment this site could vanish if I ever become too poor to pay WordPress for this domain).
+
+I guess I should extend my heartfelt gratitude to some cosmological inner workings that might have triggered a small event (whatever that might be), which in turn cascaded into a full-blown butterfly effect that somehow led you with all your hitherto lived experiences directly to this site.
+
+Yes, that’s my best attempt at ascribing intention to a happenstance. Quite frail, but hey, at least more romantic and fun than all the humdrum probability theories.
+
+## What on earth is Ranthink?
+
+It’s not a real word, at least, not in the grand Oxford dictionary anyway. But on this site, it’s as real as your imaginary situations and scenes you construct in your head every time when you lay in bed just before dozing off; it’s as real as you make it to be.
+
+If you say the word “ranthink” quickly just twice, it will just sound like “ranting”.
+
+Oh how I love ranting. I should have just named this site ranting.com. However, ranting alone often is unproductive. Don’t get me wrong, ranting as an art of relieving stress is a powerful tool we all somehow are naturally equipped with. There is nothing quite like being angry and showing that vexation almost on autopilot. It’s even more effective of a stress-relieving tool if your audience is also a professional **Ranter** (yes, capital R) like you.
+
+After the euphoric ranting, then what? Yes, you have relieved your stress, but your source of stress remains the same, no?
+
+I’m not saying that by reflecting upon it, somehow your source of stress will be miraculously eradicated. I mean, I’m not espousing homicide of any kind, especially not of your corporate bosses.
+
+I’m trying to dig deeper into it. Yes, something bothers me and stresses me out, but is it really as surface level as it seems?
+
+And you know what else stresses me out, not knowing why I’m stressing out all the time.
+
+Only when you really sit down, take out your pen and your notebook (or just your laptop, like in my case), and actually write it out can you see pass through the superficial.
+
+And now I just sound like my elementary-school English teacher, preachy and sometimes quite cringe. Hey, if it works for people in the past few centuries and for my English teacher, the method might not be without its credit.
+
+## Why a Website to Rant and Think
+
+For all I know, there might be at least tens of subreddits out there dedicated to people who enjoy ranting and thinking.
+
+So why not just post there? At least, on those platforms, I might even get more engagement and discussion for my posts.
+
+I think, for quite some time, I have caught myself heavily editing and filtering what I originally wanted to express in hopes of getting more agreement (in the form of likes or upvotes) and positive feedback. I felt not relieved but actually more anxious after every post, constantly waiting for the notification to see how many likes and upvotes I have. With website, I don’t think I have to worry about that (well, we shall see if this website ever gains any significant readers).
+
+Secondly, I just love to have a website to store all my thoughts, almost like having a little cozy room in an infinite world wide web; readers come and go, but my room remains, well, provided I have enough money to continously pay for the bills. I don’t know how else to put it, except it feels somehow a little sacred.
+
+Maybe it’s just my childish desire to appeal sophisticated, to which I shall respond, “Fuck yeah. Why not?”
+
+## Some Questions You Might Have
+
+<details>
+<summary>Who are you, actually?</summary>
+
+Well. thanks for asking. It’s not like I’m a narcissist or anything. I was born in 2001, from a small town called Klang in Malaysia. That’s all I’ll reveal. Anything more than that will get myself doxxed if I ever publish some controversial take.
+
+</details>
+
+<details>
+<summary>What’s the point of this website?</summary>
+
+My enjoyment and sense of fulfillment.
+
+</details>
+
+<details>
+<summary>Is it possible to rant and think all the time?</summary>
+
+No. Sometimes I’m just too lazy to use the left hemisphere of my cerebrum.
+
+</details>
+
+<details>
+<summary>Use of AI?</summary>
+
+Fuck no. I pride myself on my writing prowess.
+
+</details>
+
+<details>
+<summary>Is that you in the image above?</summary>
+
+No. It’s just a featured image generated by AI. My apology. I don’t pride myself on my visual art forté. I’m just too lazy to spend the right hemisphere of my cerebrum on anything other than written words on this website. However, I will try from time to time to use random image I take on that day when I publish the post.
+
+If you want to glimpse into my visual creativity, you can follow my Instagram at……I’m just kidding. You will never get to know my IG. HEHE.
+
+</details>
