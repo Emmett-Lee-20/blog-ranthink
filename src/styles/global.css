@@ -171,7 +171,8 @@ nav ul {
   margin: 0;
   font-size: clamp(2rem, 5vw, 3.25rem);
   font-weight: 400;
-  line-height: 1.163873371;
+  /* The old post and About headers set this inline, overriding the theme's 1.163873371. */
+  line-height: 1.056603774;
 }
 
 /* A post or page. */
@@ -325,7 +326,8 @@ nav ul {
   margin: 1rem 0 0.25rem;
   font-size: 1.5rem;
   font-weight: 500;
-  line-height: 1.25;
+  /* The theme's post-title line-height, which the homepage list does not override. */
+  line-height: 1.163873371;
 }
 
 .post-list h3 a {

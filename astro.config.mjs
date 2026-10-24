@@ -11,4 +11,11 @@ export default defineConfig({
     // quotes, dashes, ellipses). Applying smart punctuation again would alter the text.
     processor: satteri({ features: { smartPunctuation: false } }),
   },
+  vite: {
+    build: {
+      // The CSS minifier rounds numbers (1.056603774 becomes 1.0566). The design spec
+      // requires the measured line-heights exactly, and the stylesheet is a few KB.
+      cssMinify: false,
+    },
+  },
 });
