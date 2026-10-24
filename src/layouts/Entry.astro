@@ -1,0 +1,36 @@
+---
+// One post or page: the featured image as the cover, the date and title over it,
+// then the text. Posts end with the author's name; pages do not, as on the old site.
+import { render, type CollectionEntry } from 'astro:content';
+import Base from './Base.astro';
+import Cover from '../components/Cover.astro';
+import { displayDate, isoDate } from '../lib/site';
+
+interface Props {
+  entry: CollectionEntry<'posts'> | CollectionEntry<'pages'>;
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+---
+
+<Base title={data.seoTitle} description={data.description}>
+  <Cover image={data.image} alt={data.imageAlt} position={data.imagePosition}>
+    <p class="entry-date"><time datetime={isoDate(data.pubDate)}>{displayDate(data.pubDate)}</time></p>
+    <h1 class="entry-title">{data.title}</h1>
+  </Cover>
+  <main id="content">
+    <div class="entry-content">
+      <Content />
+    </div>
+    {
+      entry.collection === 'posts' && (
+        <footer class="entry-footer">
+          <p class="entry-footer-label">Published by</p>
+          <p class="entry-author">{data.author}</p>
+        </footer>
+      )
+    }
+  </main>
+</Base>

@@ -1,0 +1,18 @@
+---
+// Cloudflare Pages serves this file, with status 404, for any address that has no
+// page. Without it, Pages would treat the site as a single-page app and answer every
+// unknown address with the homepage instead.
+import Base from '../layouts/Base.astro';
+import Cover from '../components/Cover.astro';
+import hero from '../assets/theme/scifi-city-minimalism-5l-1.jpeg';
+---
+
+<Base title="Page not found | Ranthink" description="There is no page at this address.">
+  <Cover image={hero} alt="" position="50% 72%" minHeight="252px">
+    <h1 class="home-title">Page not found</h1>
+  </Cover>
+  <main id="content" class="entry-content">
+    <p>There is no page at this address. It may have moved, or it may never have existed.</p>
+    <p><a href="/">Go to the homepage</a></p>
+  </main>
+</Base>

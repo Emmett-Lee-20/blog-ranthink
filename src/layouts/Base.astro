@@ -1,0 +1,29 @@
+---
+import '../styles/global.css';
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props {
+  // The <title>. For posts and pages this is `seoTitle`, not the visible heading.
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <slot />
+    <SiteFooter />
+  </body>
+</html>

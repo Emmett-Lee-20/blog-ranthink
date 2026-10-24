@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import background from '../assets/theme/minimalist-desktop-5.jpg';
+import { SITE_TITLE } from '../lib/site';
+
+const pages = (await getCollection('pages')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<footer class="site-footer" style={`background-image: url('${background.src}')`}>
+  <div class="site-footer-inner">
+    <nav aria-label="Footer">
+      <ul>
+        {pages.map((page) => <li><a href={`/${page.id}/`}>{page.data.title}</a></li>)}
+      </ul>
+    </nav>
+    <p class="site-title"><a href="/">{SITE_TITLE}</a></p>
+  </div>
+</footer>
