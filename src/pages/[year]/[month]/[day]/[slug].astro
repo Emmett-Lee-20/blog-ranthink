@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+import Entry from '../../../../layouts/Entry.astro';
+import { postParams } from '../../../../lib/site';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({ params: postParams(post), props: { post } }));
+}
+
+const { post } = Astro.props;
+---
+
+<Entry entry={post} />

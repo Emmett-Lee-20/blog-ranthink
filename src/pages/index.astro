@@ -1,0 +1,62 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Cover from '../components/Cover.astro';
+import hero from '../assets/theme/scifi-city-minimalism-5l-1.jpeg';
+import { SITE_TITLE, TAGLINE, displayDate, excerpt, isoDate, newestFirst, postPath } from '../lib/site';
+
+const posts = newestFirst(await getCollection('posts')).map((post) => {
+  if (!post.rendered) throw new Error(`${post.id}: no rendered text to build the excerpt from`);
+  return { post, url: postPath(post), summary: excerpt(post.rendered.html) };
+});
+---
+
+<Base
+  title="Ranthink | Rant about it, then think about it"
+  description="A personal internet space where I rant about everything, followed up by some reflection."
+>
+  <Cover image={hero} alt="" position="50% 72%" minHeight="252px">
+    <h1 class="home-title">{SITE_TITLE}</h1>
+    <p class="home-tagline">{TAGLINE}</p>
+  </Cover>
+  <main id="content" class="home">
+    <div class="home-intro">
+      <h2>Let’s Rant &amp; Think</h2>
+      <p>This is a very personal, intimate space of mine (aside from my bedroom) where I rant just about anything and everything professionally, which means every ranting session comes with some reflection and thinking.</p>
+      <blockquote>
+        <p>To rant is human, to rant and think divine</p>
+        <p>– Me (Emmett)</p>
+      </blockquote>
+    </div>
+    <section class="post-list" aria-labelledby="posts-heading">
+      <h2 id="posts-heading" class="visually-hidden">Posts</h2>
+      <ul>
+        {
+          posts.map(({ post, url, summary }) => (
+            <li>
+              <a href={url} class="post-list-image">
+                <img
+                  src={post.data.image.src}
+                  width={post.data.image.width}
+                  height={post.data.image.height}
+                  alt={post.data.title}
+                  loading="lazy"
+                />
+              </a>
+              <h3>
+                <a href={url}>{post.data.title}</a>
+              </h3>
+              <p class="post-list-date">
+                <time datetime={isoDate(post.data.pubDate)}>{displayDate(post.data.pubDate)}</time>
+              </p>
+              <p class="post-list-excerpt">{summary}</p>
+              <p>
+                <a href={url}>Continue reading</a>
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+</Base>

@@ -1,0 +1,13 @@
+# Installed and generated files; Cloudflare Pages rebuilds them from package-lock.json.
+node_modules/
+dist/
+.astro/
+
+# Secrets never belong in this repository. It is public.
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+.DS_Store

@@ -1,0 +1,14 @@
+---
+// Each file in src/content/pages/ is served at /<file name>/ — about.md at /about/.
+import { getCollection } from 'astro:content';
+import Entry from '../layouts/Entry.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages');
+  return pages.map((page) => ({ params: { slug: page.id }, props: { page } }));
+}
+
+const { page } = Astro.props;
+---
+
+<Entry entry={page} />

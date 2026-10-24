@@ -1,0 +1,8 @@
+# Keep the temporary Cloudflare Pages addresses out of search engines while the old
+# site at ranthink.com is still live. These rules match only *.pages.dev hosts, so
+# they never apply to blog.ranthink.com.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex

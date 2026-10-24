@@ -1,0 +1,17 @@
+---
+// The row across the top of every cover: the site title on the left and a link to
+// each page (today, only About) on the right.
+import { getCollection } from 'astro:content';
+import { SITE_TITLE } from '../lib/site';
+
+const pages = (await getCollection('pages')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<div class="top-bar">
+  <p class="site-title"><a href="/">{SITE_TITLE}</a></p>
+  <nav aria-label="Main">
+    <ul>
+      {pages.map((page) => <li><a href={`/${page.id}/`}>{page.data.title}</a></li>)}
+    </ul>
+  </nav>
+</div>
