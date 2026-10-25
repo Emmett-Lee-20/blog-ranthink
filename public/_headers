@@ -6,3 +6,10 @@ https://:project.pages.dev/*
 
 https://:version.:project.pages.dev/*
   X-Robots-Tag: noindex
+
+# Label the feed with the type WordPress sent for /feed/.
+/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+/feed/
+  Content-Type: application/rss+xml; charset=utf-8

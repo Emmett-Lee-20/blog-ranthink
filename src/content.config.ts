@@ -24,6 +24,10 @@ const entry = ({ image }: SchemaContext) =>
     // CSS object-position of the cover image (the WordPress focal point).
     imagePosition: z.string().default('50% 70%'),
     author: z.string().default('Emmett Lee'),
+    // The id the old WordPress feed gave this post, kept so that feed readers already
+    // subscribed do not show it a second time. Posts written after the move leave it
+    // out, and the feed identifies them by their address.
+    feedId: z.string().min(1).optional(),
   });
 
 const posts = defineCollection({

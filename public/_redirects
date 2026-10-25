@@ -1,0 +1,14 @@
+# Addresses the old WordPress site served that this site has no page for. Once
+# ranthink.com forwards every path to blog.ranthink.com, old links arrive here.
+
+# The feed: WordPress served it at /feed/, and sent /feed there.
+/feed /feed/ 301
+/feed/ /rss.xml 200
+
+# The sitemap Rank Math listed in the old robots.txt, possibly submitted to Google.
+/sitemap_index.xml /sitemap.xml 301
+
+# Archive pages. With one author and one category, each only listed the posts the
+# homepage lists.
+/author/emmettleewx/ / 301
+/category/uncategorized/ / 301

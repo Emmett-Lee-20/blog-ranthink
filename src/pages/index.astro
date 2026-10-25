@@ -15,6 +15,8 @@ const posts = newestFirst(await getCollection('posts')).map((post) => {
   title="Ranthink | Rant about it, then think about it"
   description="A personal internet space where I rant about everything, followed up by some reflection."
 >
+  {/* Proves to Google Search Console that the owner controls this site. Copied from the old homepage. */}
+  <meta slot="head" name="google-site-verification" content="qfWYGLDgXmypsm9o_5QsdySVB_9yPz33ZvtHw73jZ9Y" />
   <Cover image={hero} alt="" position="50% 72%" minHeight="252px">
     <h1 class="home-title">{SITE_TITLE}</h1>
     <p class="home-tagline">{TAGLINE}</p>

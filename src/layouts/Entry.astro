@@ -5,6 +5,7 @@ import { render, type CollectionEntry } from 'astro:content';
 import Base from './Base.astro';
 import Cover from '../components/Cover.astro';
 import { displayDate, isoDate } from '../lib/site';
+import { shareImage } from '../lib/seo';
 
 interface Props {
   entry: CollectionEntry<'posts'> | CollectionEntry<'pages'>;
@@ -13,9 +14,21 @@ interface Props {
 const { entry } = Astro.props;
 const { data } = entry;
 const { Content } = await render(entry);
+const article = {
+  // As on the old site: posts are BlogPosting, the About page is Article.
+  type: entry.collection === 'posts' ? ('BlogPosting' as const) : ('Article' as const),
+  published: data.pubDate,
+  modified: data.updatedDate,
+  author: data.author,
+};
 ---
 
-<Base title={data.seoTitle} description={data.description}>
+<Base
+  title={data.seoTitle}
+  description={data.description}
+  image={shareImage(data.image, data.imageAlt, data.title, Astro.site!)}
+  article={article}
+>
   <Cover image={data.image} alt={data.imageAlt} position={data.imagePosition}>
     <p class="entry-date"><time datetime={isoDate(data.pubDate)}>{displayDate(data.pubDate)}</time></p>
     <h1 class="entry-title">{data.title}</h1>

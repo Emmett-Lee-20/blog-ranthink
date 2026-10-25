@@ -31,6 +31,8 @@ The text of the post.
   in the list on the homepage.
 - Write dates in Malaysia time, ending in `+08:00`.
 - Use `imageAlt: ""` only for an image that shows nothing a reader needs to know about.
+- Leave out `feedId`. Only the two posts moved from WordPress have one, so that readers already
+  subscribed to the old feed do not see them twice.
 - Write the punctuation you want readers to see. Curly quotes (’ “ ”), dashes (–) and the ellipsis
   (…) are not added automatically.
 
@@ -74,7 +76,11 @@ npm run preview    # serve dist/ to check the finished build
 | `src/assets/images/` | Featured images, served byte-for-byte as uploaded |
 | `src/assets/theme/` | The homepage cover and footer backgrounds |
 | `src/pages/` | Which addresses exist: the homepage, posts by date, pages, and the 404 page |
+| `src/pages/rss.xml.ts`, `src/pages/sitemap.xml.ts` | The RSS feed and the sitemap, built from the posts |
 | `src/layouts/`, `src/components/` | The page frame, the cover, the top bar and the footer |
 | `src/lib/site.ts` | Dates in Malaysia time, post addresses and homepage excerpts |
+| `src/lib/seo.ts` | Link previews and the structured data search engines read |
 | `src/styles/global.css` | All styling |
-| `public/_headers` | Keeps the temporary `*.pages.dev` addresses out of search engines |
+| `public/_headers` | Keeps the temporary `*.pages.dev` addresses out of search engines; labels the feed |
+| `public/_redirects` | Old WordPress addresses: the feed at `/feed/`, the old sitemap, archive pages |
+| `public/robots.txt` | Lets search engines in and points them to the sitemap |

@@ -7,6 +7,7 @@ updatedDate: "2025-12-21T14:02:17+08:00"
 image: "../../assets/images/Personal-Escapade.jpg"
 imageAlt: ""
 imagePosition: "50% 70%"
+feedId: "https://ranthink.com/?p=178"
 ---
 
 I remember it was in 2021 or 2022, though I can’t recall the exact timing—as the life of Covid-19 has been but almost an entire blur, like that of reels rolled from the old cassette tape, that elicited the numbing stupor—I first heard of the terms Gemeinschaft and Gesellschaft in a sociology class. It has nothing to do at all with my major, but it was one of the foundational courses for my American degree program.
