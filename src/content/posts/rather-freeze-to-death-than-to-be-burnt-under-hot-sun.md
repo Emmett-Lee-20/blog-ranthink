@@ -7,6 +7,7 @@ updatedDate: "2025-09-16T21:06:40+08:00"
 image: "../../assets/images/IMG_20230507_105119.jpg"
 imageAlt: "merdeka 118 tower"
 imagePosition: "50% 70%"
+feedId: "https://ranthink.com/2025/08/17/hello-world/"
 ---
 
 I was feeling a little despondent today, so I decided to have a solo half-day trip to explore the city centre of Kuala Lumpur. It’s effective, the walk. My despondency was instantly gone and replaced with something more fervent, hatred.

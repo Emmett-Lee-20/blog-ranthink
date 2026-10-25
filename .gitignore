@@ -9,5 +9,6 @@ dist/
 !.env.example
 *.key
 *.pem
+*.age
 
 .DS_Store

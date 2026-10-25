@@ -1,15 +1,25 @@
 ---
 import '../styles/global.css';
 import SiteFooter from '../components/SiteFooter.astro';
+import { SITE_TITLE, isoDate } from '../lib/site';
+import { structuredData, type ArticleInfo, type ShareImage } from '../lib/seo';
 
 interface Props {
   // The <title>. For posts and pages this is `seoTitle`, not the visible heading.
   title: string;
   description: string;
+  // The featured image, for link previews. The homepage has none, as on the old site.
+  image?: ShareImage;
+  // Dates and author, for posts and pages.
+  article?: ArticleInfo;
+  // The 404 page: kept out of search engines, with no canonical address.
+  notFound?: boolean;
 }
 
-const { title, description } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const { title, description, image, article, notFound = false } = Astro.props;
+const site = Astro.site!;
+const url = new URL(Astro.url.pathname, site);
+const home = Astro.url.pathname === '/';
 ---
 
 <!doctype html>
@@ -19,7 +29,48 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
+    {notFound && <meta name="robots" content="noindex" />}
+    {
+      !notFound && (
+        <>
+          <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+          <link rel="canonical" href={url} />
+          <meta property="og:locale" content="en_US" />
+          <meta property="og:type" content={article ? 'article' : 'website'} />
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={description} />
+          <meta property="og:url" content={url} />
+          <meta property="og:site_name" content={SITE_TITLE} />
+          {article && <meta property="og:updated_time" content={isoDate(article.modified)} />}
+          {image && (
+            <>
+              <meta property="og:image" content={image.url} />
+              <meta property="og:image:width" content={String(image.width)} />
+              <meta property="og:image:height" content={String(image.height)} />
+              <meta property="og:image:alt" content={image.alt} />
+              <meta property="og:image:type" content={image.type} />
+            </>
+          )}
+          {article && (
+            <>
+              <meta property="article:published_time" content={isoDate(article.published)} />
+              <meta property="article:modified_time" content={isoDate(article.modified)} />
+            </>
+          )}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={title} />
+          <meta name="twitter:description" content={description} />
+          {image && <meta name="twitter:image" content={image.url} />}
+          <script
+            is:inline
+            type="application/ld+json"
+            set:html={structuredData({ site, url, title, description, home, image, article })}
+          />
+        </>
+      )
+    }
+    <link rel="alternate" type="application/rss+xml" title={`${SITE_TITLE} » Feed`} href={new URL('/feed/', site)} />
+    <slot name="head" />
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
